@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+    }
+    kotlinOptions{
+        jvmTarget = 1.8
+    }
+    viewBinding {
+        enabled  = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api project(path: ':bos')
+    api project(path: ':eos')
+    api project(path: ':btc')
+    api project(path: ':eth')
+    api project(path: ':vsys')
+    for (dep in rootProject.ext.dependencies.implementation) {
+        implementation dep
+    }
+    for (dep in rootProject.ext.dependencies.api) {
+        api dep
+    }
+    for (dep in rootProject.ext.dependencies.test) {
+        testApi dep
+    }
+    for (dep in rootProject.ext.dependencies.kapts) {
+        kapt dep
+    }
+}

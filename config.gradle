@@ -1,0 +1,95 @@
+ext.lifecycle_version = "2.2.0"
+ext.kotlin_version = '1.3.61'
+ext.arch_version = "2.1.0"
+ext.nav_version = "2.3.0-alpha01"
+ext.room_version = "2.2.3"
+ext.paging_version = "2.1.1"
+ext.collection_version = "1.1.0"
+ext.camerax_version = "1.0.0-alpha10"
+
+ext.repositories = [
+
+]
+
+ext.android = [compileSdkVersion: 29,
+               buildToolsVersion: "29.0.3",
+               applicationId    : "top.andnux.wallet",
+               minSdkVersion    : 21,
+               targetSdkVersion : 29,
+               versionCode      : 1,
+               versionName      : "1.0.0"]
+
+ext.classpaths = [
+        'com.android.tools.build:gradle:3.6.1',
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+]
+
+ext.dependencies = [
+        implementation: [
+
+        ],
+        api           : [
+                "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+                "androidx.appcompat:appcompat:1.1.0",
+                "androidx.core:core-ktx:1.2.0",
+                "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
+                "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+                "com.google.auto.service:auto-service:1.0-rc6",
+                'androidx.constraintlayout:constraintlayout:1.1.3',
+                "androidx.cardview:cardview:1.0.0",
+                "androidx.gridlayout:gridlayout:1.0.0",
+                "androidx.recyclerview:recyclerview:1.1.0",
+                "androidx.recyclerview:recyclerview-selection:1.1.0-rc01",
+                "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0",
+                "androidx.drawerlayout:drawerlayout:1.0.0",
+                "androidx.documentfile:documentfile:1.0.1",
+                "androidx.coordinatorlayout:coordinatorlayout:1.1.0",
+                "androidx.asynclayoutinflater:asynclayoutinflater:1.0.0",
+                "androidx.exifinterface:exifinterface:1.1.0",
+                "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+                "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+                "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+                "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version",
+                "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version",
+                "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version",
+                "androidx.multidex:multidex:2.0.1",
+                "androidx.legacy:legacy-support-v4:1.0.0",
+                "androidx.lifecycle:lifecycle-extensions:2.2.0",
+                "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0",
+                "androidx.mediarouter:mediarouter:1.1.0",
+                "androidx.room:room-runtime:$room_version",
+                "androidx.room:room-ktx:$room_version",
+                "androidx.room:room-rxjava2:$room_version",
+                "androidx.room:room-guava:$room_version",
+                "androidx.navigation:navigation-fragment:$nav_version",
+                "androidx.navigation:navigation-ui:$nav_version",
+                "androidx.navigation:navigation-fragment-ktx:$nav_version",
+                "androidx.navigation:navigation-ui-ktx:$nav_version",
+                "androidx.navigation:navigation-dynamic-features-fragment:$nav_version",
+                "androidx.paging:paging-runtime:$paging_version",
+                "androidx.paging:paging-rxjava2:$paging_version",
+                "androidx.drawerlayout:drawerlayout:1.0.0",
+                "androidx.collection:collection:$collection_version",
+                "androidx.collection:collection-ktx:$collection_version",
+                "androidx.browser:browser:1.2.0",
+                "androidx.biometric:biometric:1.0.1",
+                "androidx.camera:camera-camera2:${camerax_version}",
+                "androidx.camera:camera-view:1.0.0-alpha07",
+                "androidx.camera:camera-extensions:1.0.0-alpha07",
+                "androidx.camera:camera-lifecycle:${camerax_version}",
+                "com.google.code.gson:gson:2.8.6"
+        ],
+        kapts         : [
+                "com.google.auto.service:auto-service:1.0-rc6",
+                "androidx.lifecycle:lifecycle-compiler:$lifecycle_version",
+                "androidx.room:room-compiler:$room_version"
+        ],
+        test          : [
+                'junit:junit:4.13',
+                'androidx.test.ext:junit:1.1.1',
+                'androidx.test.espresso:espresso-core:3.2.0',
+                "androidx.arch.core:core-testing:$arch_version",
+                "androidx.room:room-testing:$room_version",
+                "androidx.navigation:navigation-testing:$nav_version",
+                "androidx.paging:paging-common:$paging_version"
+        ]]

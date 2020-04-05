@@ -1,0 +1,8 @@
+rootProject.name='wallet'
+include ':app'
+include ':basic'
+include ':eos'
+include ':btc'
+include ':bos'
+include ':eth'
+include ':vsys'
