@@ -21,7 +21,8 @@ ext.android = [compileSdkVersion: 29,
 
 ext.classpaths = [
         'com.android.tools.build:gradle:3.6.1',
-        "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
+        "com.github.dcendents:android-maven-gradle-plugin:1.5"
 ]
 
 ext.dependencies = [
@@ -85,11 +86,14 @@ ext.dependencies = [
                 "androidx.room:room-compiler:$room_version"
         ],
         test          : [
-                'junit:junit:4.13',
+                'junit:junit:4.13'
+        ],
+        androidTest   : [
                 'androidx.test.ext:junit:1.1.1',
                 'androidx.test.espresso:espresso-core:3.2.0',
                 "androidx.arch.core:core-testing:$arch_version",
                 "androidx.room:room-testing:$room_version",
                 "androidx.navigation:navigation-testing:$nav_version",
                 "androidx.paging:paging-common:$paging_version"
-        ]]
+        ]
+]

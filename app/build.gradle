@@ -1,4 +1,4 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -7,6 +7,7 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
     defaultConfig {
+        applicationId = "top.andnux.wallet"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
@@ -47,6 +48,9 @@ dependencies {
     }
     for (dep in rootProject.ext.dependencies.test) {
         testApi dep
+    }
+    for (dep in rootProject.ext.dependencies.androidTest) {
+        androidTestImplementation dep
     }
     for (dep in rootProject.ext.dependencies.kapts) {
         kapt dep

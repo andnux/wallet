@@ -7,6 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         for (path in rootProject.ext.classpaths) {
             classpath path
         }
@@ -17,7 +18,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-
     }
 }
 

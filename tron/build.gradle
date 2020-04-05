@@ -2,7 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.andnux'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -34,12 +35,7 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api 'org.bitcoinj:bitcoinj-core:0.15.6'
-    api 'com.lambdaworks:scrypt:1.4.0'
-    api 'io.github.novacrypto:BIP32:0.0.8'
-    api 'io.github.novacrypto:BIP39:0.1.9'
-    api 'io.github.novacrypto:BIP44:0.0.3'
-    api 'com.google.guava:guava:28.1-android'
+    api project(path: ':core')
     for (dep in rootProject.ext.dependencies.implementation) {
         implementation dep
     }
@@ -48,6 +44,9 @@ dependencies {
     }
     for (dep in rootProject.ext.dependencies.test) {
         testApi dep
+    }
+    for (dep in rootProject.ext.dependencies.androidTest) {
+        androidTestImplementation dep
     }
     for (dep in rootProject.ext.dependencies.kapts) {
         kapt dep
