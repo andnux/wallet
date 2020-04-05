@@ -19,7 +19,7 @@ class BosWalletService : WalletService {
     @Throws(Exception::class)
     override fun createAccount(): WalletAccount {
         val mnemonic = ChainUtil.genMnemonic(Words.TWELVE)
-        val privateKey = BosPrivateKey(ChainUtil.genECKey(mnemonic, "").privKeyBytes)
+        val privateKey = BosPrivateKey(ChainUtil.genECKey(mnemonic, "m/44'/194'/0'/0/0").privKeyBytes)
         return WalletAccount(privateKey = privateKey.toWif(),
                 publicKey = privateKey.publicKey.toString(),
                 mnemonic = mnemonic);
